@@ -144,6 +144,11 @@ const CreatePost = () => {
             type="submit"
             className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
+            {loading && (
+              <div className="absolute inset-0 z-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] rounded-lg">
+                <Loader />
+              </div>
+            )}
             {loading ? "Sharing..." : "Share with the community"}
           </button>
         </div>
