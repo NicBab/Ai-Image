@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import * as dotenv from "dotenv";
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 import connectDB from "./mongodb/connect.js";
 import PostRoutes from "./routes/postRoutes.js";
