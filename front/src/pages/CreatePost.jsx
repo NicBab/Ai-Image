@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { preview } from "../assets";
 import { getRandomPrompt } from "../utils";
@@ -46,24 +46,24 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:8080/api/v1/post', {
-          method: 'POST',
+        const response = await fetch("http://localhost:8080/api/v1/post", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({ ...form }),
         });
 
         await response.json();
-        alert('Success');
-        navigate('/');
+        alert("Success");
+        navigate("/");
       } catch (err) {
         alert(err);
       } finally {
         setLoading(false);
       }
     } else {
-      alert('Please generate an image with proper details');
+      alert("Please generate an image with proper details");
     }
   };
 

@@ -20,7 +20,12 @@ router.route("/").get(async (req, res) => {
     const posts = await Post.find({});
     res.status(200).json({ success: true, data: posts });
   } catch (error) {
-    res.status(500).json({ success: false, message: "Fetching posts failed, Please try again!" });
+    res
+      .status(500)
+      .json({
+        success: false,
+        message: "Fetching posts failed, Please try again!",
+      });
   }
 });
 
